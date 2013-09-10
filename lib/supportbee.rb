@@ -1,4 +1,4 @@
-require_relative 'supportbee/client'
+require_relative 'supportbee/client.rb'
 require 'json/ext'
 require 'openssl'
 require 'faraday'

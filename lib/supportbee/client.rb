@@ -7,6 +7,8 @@ module Supportbee
   class Client
 
     include Supportbee::Client::Tickets
+    include Supportbee::Client::Agents
+    include Supportbee::Client::Groups
 
     def initialize(options={})
       @company = options[:company]

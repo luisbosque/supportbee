@@ -1,6 +1,6 @@
 module Supportbee
   class Client
-    module Agens
+    module Agents
       
       def agents()
         response = @conn.get '/users.json'
