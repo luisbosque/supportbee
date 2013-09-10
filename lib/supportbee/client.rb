@@ -1,4 +1,6 @@
 require_relative 'client/tickets.rb'
+require_relative 'client/agents.rb'
+require_relative 'client/groups.rb'
 require 'json'
 
 module Supportbee

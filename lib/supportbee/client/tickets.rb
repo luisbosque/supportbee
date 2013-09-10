@@ -11,6 +11,7 @@ module Supportbee
         response = @conn.get "/tickets/#{id}.json"
         JSON.parse(response.body)
       end
+
     end
   end
 end
