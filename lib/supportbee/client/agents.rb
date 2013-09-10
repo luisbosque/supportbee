@@ -2,9 +2,8 @@ module Supportbee
   class Client
     module Agents
       
-      def agents()
-        response = @conn.get '/users.json'
-        JSON.parse(response.body)
+      def agents(extra_parameters = {})
+        index('users', extra_parameters) 
       end
 
       def agent(id)

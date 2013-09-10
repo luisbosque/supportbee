@@ -2,9 +2,8 @@ module Supportbee
   class Client
     module Tickets
       
-      def tickets()
-        response = @conn.get '/tickets.json'
-        JSON.parse(response.body)
+      def tickets(extra_parameters = {})
+        index('tickets', extra_parameters) 
       end
 
       def ticket(id)
