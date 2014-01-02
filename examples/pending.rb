@@ -3,15 +3,20 @@ require 'supportbee'
 
 sb = Supportbee::Client.new(:company => '', :auth_token => '')
 
+# Fetch all tickets
 tickets = sb.tickets
+
+# Select only those tickets that are unanswered
 ut = tickets.select {|ut| ut['unanswered'] }
 
+# Initialize a ticket counter for each agent
 raw_users = sb.agents
 users = {}
 raw_users.each do |u| 
   users[u['name']] = 0
 end
 
+# Initialize a ticket counter for each group
 raw_groups = sb.groups
 groups = {}
 raw_groups.each do |g| 
@@ -21,6 +26,8 @@ end
 unassigned = 0
 total = 0
 
+# Iterate through all the unanswered tickets and increment the users and
+# groups counters
 ut.each do |t|
   if t['current_assignee'].nil?
     unassigned = unassigned + 1
