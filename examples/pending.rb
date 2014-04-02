@@ -4,7 +4,7 @@ require 'supportbee'
 sb = Supportbee::Client.new(:company => '', :auth_token => '')
 
 # Fetch all tickets
-tickets = sb.tickets
+tickets = sb.tickets(:per_page => 100)
 
 # Select only those tickets that are unanswered
 ut = tickets.select {|ut| ut['unanswered'] }
