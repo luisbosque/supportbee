@@ -1,4 +1,6 @@
 # Supportbee
+[![Gem Version](https://badge.fury.io/rb/supportbee.png)][gem]
+[gem]: http://badge.fury.io/rb/supportbee
 
 Ruby client to work with Supportbee API (https://developers.supportbee.com/api)
 
