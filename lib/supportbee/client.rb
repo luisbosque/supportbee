@@ -17,7 +17,9 @@ module Supportbee
       @conn = Faraday.new(:url => @host) do |faraday|
         faraday.params[:auth_token] = @auth_token
         faraday.request  :url_encoded             # form-encode POST params
-        faraday.response :logger                  # log requests to STDOUT
+        if options[:debug]
+          faraday.response :logger                  # log requests to STDOUT
+        end
         faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
       end
     end
